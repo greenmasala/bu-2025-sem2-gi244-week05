@@ -9,11 +9,22 @@ public class WaveSpawnManager : MonoBehaviour
     private int waveIndex = 0;
     void Start()
     {
-
+        WaveController.ChangeWave(WaveConfigs[0]);
     }
 
     void Update()
     {
-
+        if (WaveController.IsCompleted())
+        {
+            currentWaveIndex++;
+            if (currentWaveIndex < WaveConfigs.Length)
+            {
+                WaveController.ChangeWave(WaveConfigs[currentWaveIndex]);
+            }
+            else
+            {
+                Debug.Log("Done");
+            }
+        }
     }
 }

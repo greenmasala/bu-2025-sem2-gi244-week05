@@ -11,7 +11,7 @@ public class GameState : MonoBehaviour
             HitCount++;
         }
 
-        if (HitCount >= 10)
+        if (HitCount >= 100)
         {
             Time.timeScale = 0;
         }

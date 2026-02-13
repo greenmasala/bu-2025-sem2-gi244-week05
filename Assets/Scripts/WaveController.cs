@@ -19,6 +19,18 @@ public class WaveController : MonoBehaviour
         }
     }
 
+    public void ChangeWave(Wave wave)
+    {
+        CurrentWave = wave;
+        EnemySpawned = 0;
+        nextSpawnTime = Time.time;
+    }
+
+    public bool IsCompleted()
+    {
+        return EnemySpawned >= CurrentWave.EnemyCount;
+    }
+
     void Spawn() //you can right click a function to rename it and all instances of it
     {
         int enemyIndex = Random.Range(0, CurrentWave.EnemyPrefabs.Length);
