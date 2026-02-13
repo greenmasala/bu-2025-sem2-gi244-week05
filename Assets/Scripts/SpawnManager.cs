@@ -10,10 +10,10 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating(nameof(Spawn), 1, 1f);
+        InvokeRepeating(nameof(Spawn), 1, 1f); //nameof safer than using "" for getting the string name of a function
     }
 
-    void Spawn()
+    void Spawn() //you can right click a function to rename it and all instances of it
     {
         animalIndex = Random.Range(0, animalPrefabs.Length);
         Vector3 spawnPos = new(
